@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float Speed = 5f;
 
     [Tooltip("Impact Force")]
-    public float Force = 1000f;
+    public float Force = 5f;
 
     [HideInInspector]
     public bool Run = false;
@@ -54,7 +54,9 @@ public class PlayerController : MonoBehaviour
         //Player Collision: Enemy
         if (collision.gameObject.tag == "Car")
         {
-            rb.AddForce(transform.up * Force);
+             rb.AddForce(transform.up * Force,ForceMode.Impulse);
+            anim.enabled = false;
+           
             Run = false;
             GameController.Instance_Gm.GameOver();
           

@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.F))
         {
             PlayerPrefs.SetFloat("MaxD",0.0f);
-            PlayerPrefs.SetInt("TotalGold",0);
+            PlayerPrefs.SetInt("TotalGold", 0);
         }
     }
 
